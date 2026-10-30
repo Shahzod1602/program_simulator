@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+.data/
+.env
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+admin-invite.txt
+preview.png
+learning-preview.png
+deployed-preview.png
+*.pem

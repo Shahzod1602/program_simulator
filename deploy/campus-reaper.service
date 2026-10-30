@@ -1,0 +1,14 @@
+[Unit]
+Description=Remove stale Campus Code sandbox containers
+After=docker.service
+
+[Service]
+Type=oneshot
+User=campus-runner
+Group=campus-runner
+SupplementaryGroups=docker
+WorkingDirectory=/opt/campus-code
+ExecStart=/opt/campus-code/.venv/bin/python reap_sandboxes.py
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true

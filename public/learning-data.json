@@ -1,0 +1,1784 @@
+{
+  "languages": {
+    "python": "Python",
+    "cpp": "C++",
+    "c": "C",
+    "javascript": "JavaScript",
+    "java": "Java",
+    "go": "Go",
+    "ruby": "Ruby",
+    "sql": "SQL"
+  },
+  "lessons": [
+    {
+      "id": "python-variables",
+      "language": "python",
+      "title": "Variables and types",
+      "summary": "Give your data a name",
+      "order": 1,
+      "minutes": 5,
+      "level": "Beginner",
+      "paragraphs": [
+        "A variable gives a value a name. You can use that name to work with the value later in your program.",
+        "In this example, name stores text and age stores a whole number. Text is written inside quotation marks; numbers are written without them.",
+        "Open the code and change the name and age. The output shows the name first, then the age on a separate line."
+      ],
+      "note": "Python determines the type from the value. age = \"19\" stores a string, not a number.",
+      "code": "age = 19\nname = \"Ali\"\nprint(name)\nprint(age)\n",
+      "output": "Ali\n19\n",
+      "stdin": "",
+      "exercise": "Change the age to 21. Notice the difference between writing a number and writing text.",
+      "quiz": {
+        "question": "Which value is an integer?",
+        "choices": [
+          "\"19\"",
+          "19",
+          "\"Ali\""
+        ],
+        "answer": 1,
+        "explanation": "Without quotation marks, 19 is an integer. \"19\" is a string."
+      }
+    },
+    {
+      "id": "python-conditions",
+      "language": "python",
+      "title": "Conditions: if / else",
+      "summary": "Teach your program to make choices",
+      "order": 2,
+      "minutes": 6,
+      "level": "Beginner",
+      "paragraphs": [
+        "A condition is an expression that evaluates to true or false. An if statement runs one block when the condition is true and an else block otherwise.",
+        "The expression score >= 60 checks whether the score is at least 60. A score of 85 produces Passed.",
+        "Test values at the boundary too: 59, 60, and 61. One successful example is not enough to check your condition."
+      ],
+      "note": "Python uses indentation to define blocks. Both if and else need a colon.",
+      "code": "score = 85\nif score >= 60:\n    print(\"Passed\")\nelse:\n    print(\"Try again\")\n",
+      "output": "Passed\n",
+      "stdin": "",
+      "exercise": "Set the score to 59. Then try 60 to check the boundary condition.",
+      "quiz": {
+        "question": "If score is 60, is score >= 60 true?",
+        "choices": [
+          "Yes",
+          "No",
+          "Only when score > 60"
+        ],
+        "answer": 0,
+        "explanation": "The >= operator includes equality, so the condition is true for 60."
+      }
+    },
+    {
+      "id": "python-loops",
+      "language": "python",
+      "title": "Loops and sums",
+      "summary": "Make repetitive work simpler",
+      "order": 3,
+      "minutes": 7,
+      "level": "Beginner",
+      "paragraphs": [
+        "A loop repeats an operation. As the counter changes, each iteration works with a new value.",
+        "The variable total starts at 0. Adding 1, 2, 3, 4, and 5 gives a final sum of 15.",
+        "Identify where the loop starts and stops. An incorrect stopping condition can cause extra iterations or an infinite loop."
+      ],
+      "note": "range(1, 6) does not include 6; the last value is 5.",
+      "code": "total = 0\nfor n in range(1, 6):\n    total += n\nprint(total)\n",
+      "output": "15\n",
+      "stdin": "",
+      "exercise": "Change the upper limit to 10. The sum of the numbers from 1 to 10 should be 55.",
+      "quiz": {
+        "question": "What is 1 + 2 + 3 + 4 + 5?",
+        "choices": [
+          "10",
+          "15",
+          "25"
+        ],
+        "answer": 1,
+        "explanation": "The five numbers add up to 15. The last counter value is not the sum."
+      }
+    },
+    {
+      "id": "python-functions",
+      "language": "python",
+      "title": "Functions",
+      "summary": "Write once, use again",
+      "order": 4,
+      "minutes": 8,
+      "level": "Beginner",
+      "paragraphs": [
+        "A function is a named group of operations. It can accept values through parameters and return a result.",
+        "The square function multiplies n by itself. Calling square(6) returns 36, which is then printed.",
+        "Returning a value and printing it are different operations. A returned value can be used in other calculations."
+      ],
+      "note": "def defines a function; return sends its result back to the caller.",
+      "code": "def square(n):\n    return n * n\n\nprint(square(6))\n",
+      "output": "36\n",
+      "stdin": "",
+      "exercise": "Call square(9). Then write a cube function that raises a number to the third power.",
+      "quiz": {
+        "question": "What does square(6) return?",
+        "choices": [
+          "12",
+          "36",
+          "216"
+        ],
+        "answer": 1,
+        "explanation": "Squaring multiplies a number by itself: 6 × 6 = 36."
+      }
+    },
+    {
+      "id": "cpp-variables",
+      "language": "cpp",
+      "title": "Variables and types",
+      "summary": "Give your data a name",
+      "order": 1,
+      "minutes": 5,
+      "level": "Beginner",
+      "paragraphs": [
+        "A variable gives a value a name. You can use that name to work with the value later in your program.",
+        "In this example, name stores text and age stores a whole number. Text is written inside quotation marks; numbers are written without them.",
+        "Open the code and change the name and age. The output shows the name first, then the age on a separate line."
+      ],
+      "note": "Use int for whole numbers and string for text. Execution starts in main.",
+      "code": "#include <iostream>\n#include <vector>\n#include <string>\nusing namespace std;\n\n\nint main() {\n    int age = 19;\n    string name = \"Ali\";\n    cout << name << \"\\n\" << age << \"\\n\";\n    return 0;\n}\n",
+      "output": "Ali\n19\n",
+      "stdin": "",
+      "exercise": "Change the age to 21. Notice the difference between writing a number and writing text.",
+      "quiz": {
+        "question": "Which value is an integer?",
+        "choices": [
+          "\"19\"",
+          "19",
+          "\"Ali\""
+        ],
+        "answer": 1,
+        "explanation": "Without quotation marks, 19 is an integer. \"19\" is a string."
+      }
+    },
+    {
+      "id": "cpp-conditions",
+      "language": "cpp",
+      "title": "Conditions: if / else",
+      "summary": "Teach your program to make choices",
+      "order": 2,
+      "minutes": 6,
+      "level": "Beginner",
+      "paragraphs": [
+        "A condition is an expression that evaluates to true or false. An if statement runs one block when the condition is true and an else block otherwise.",
+        "The expression score >= 60 checks whether the score is at least 60. A score of 85 produces Passed.",
+        "Test values at the boundary too: 59, 60, and 61. One successful example is not enough to check your condition."
+      ],
+      "note": "== compares values; = assigns a value. Do not confuse them.",
+      "code": "#include <iostream>\n#include <vector>\n#include <string>\nusing namespace std;\n\n\nint main() {\n    int score = 85;\n    if (score >= 60) {\n        cout << \"Passed\\n\";\n    } else {\n        cout << \"Try again\\n\";\n    }\n    return 0;\n}\n",
+      "output": "Passed\n",
+      "stdin": "",
+      "exercise": "Set the score to 59. Then try 60 to check the boundary condition.",
+      "quiz": {
+        "question": "If score is 60, is score >= 60 true?",
+        "choices": [
+          "Yes",
+          "No",
+          "Only when score > 60"
+        ],
+        "answer": 0,
+        "explanation": "The >= operator includes equality, so the condition is true for 60."
+      }
+    },
+    {
+      "id": "cpp-loops",
+      "language": "cpp",
+      "title": "Loops and sums",
+      "summary": "Make repetitive work simpler",
+      "order": 3,
+      "minutes": 7,
+      "level": "Beginner",
+      "paragraphs": [
+        "A loop repeats an operation. As the counter changes, each iteration works with a new value.",
+        "The variable total starts at 0. Adding 1, 2, 3, 4, and 5 gives a final sum of 15.",
+        "Identify where the loop starts and stops. An incorrect stopping condition can cause extra iterations or an infinite loop."
+      ],
+      "note": "n <= 5 includes the final value. n++ increases the counter by one.",
+      "code": "#include <iostream>\n#include <vector>\n#include <string>\nusing namespace std;\n\n\nint main() {\n    int total = 0;\n    for (int n = 1; n <= 5; n++) total += n;\n    cout << total << \"\\n\";\n    return 0;\n}\n",
+      "output": "15\n",
+      "stdin": "",
+      "exercise": "Change the upper limit to 10. The sum of the numbers from 1 to 10 should be 55.",
+      "quiz": {
+        "question": "What is 1 + 2 + 3 + 4 + 5?",
+        "choices": [
+          "10",
+          "15",
+          "25"
+        ],
+        "answer": 1,
+        "explanation": "The five numbers add up to 15. The last counter value is not the sum."
+      }
+    },
+    {
+      "id": "cpp-functions",
+      "language": "cpp",
+      "title": "Functions",
+      "summary": "Write once, use again",
+      "order": 4,
+      "minutes": 8,
+      "level": "Beginner",
+      "paragraphs": [
+        "A function is a named group of operations. It can accept values through parameters and return a result.",
+        "The square function multiplies n by itself. Calling square(6) returns 36, which is then printed.",
+        "Returning a value and printing it are different operations. A returned value can be used in other calculations."
+      ],
+      "note": "The function is defined before it is called in this example. Its return type is int.",
+      "code": "#include <iostream>\n#include <vector>\n#include <string>\nusing namespace std;\n\nint square(int n) { return n * n; }\n\nint main() {\n    cout << square(6) << \"\\n\";\n    return 0;\n}\n",
+      "output": "36\n",
+      "stdin": "",
+      "exercise": "Call square(9). Then write a cube function that raises a number to the third power.",
+      "quiz": {
+        "question": "What does square(6) return?",
+        "choices": [
+          "12",
+          "36",
+          "216"
+        ],
+        "answer": 1,
+        "explanation": "Squaring multiplies a number by itself: 6 × 6 = 36."
+      }
+    },
+    {
+      "id": "c-variables",
+      "language": "c",
+      "title": "Variables and types",
+      "summary": "Give your data a name",
+      "order": 1,
+      "minutes": 5,
+      "level": "Beginner",
+      "paragraphs": [
+        "A variable gives a value a name. You can use that name to work with the value later in your program.",
+        "In this example, name stores text and age stores a whole number. Text is written inside quotation marks; numbers are written without them.",
+        "Open the code and change the name and age. The output shows the name first, then the age on a separate line."
+      ],
+      "note": "In C, a simple string is represented by a char array. printf needs format specifiers.",
+      "code": "#include <stdio.h>\n#include <string.h>\n\n\nint main(void) {\n    int age = 19;\n    char name[] = \"Ali\";\n    printf(\"%s\\n%d\\n\", name, age);\n    return 0;\n}\n",
+      "output": "Ali\n19\n",
+      "stdin": "",
+      "exercise": "Change the age to 21. Notice the difference between writing a number and writing text.",
+      "quiz": {
+        "question": "Which value is an integer?",
+        "choices": [
+          "\"19\"",
+          "19",
+          "\"Ali\""
+        ],
+        "answer": 1,
+        "explanation": "Without quotation marks, 19 is an integer. \"19\" is a string."
+      }
+    },
+    {
+      "id": "c-conditions",
+      "language": "c",
+      "title": "Conditions: if / else",
+      "summary": "Teach your program to make choices",
+      "order": 2,
+      "minutes": 6,
+      "level": "Beginner",
+      "paragraphs": [
+        "A condition is an expression that evaluates to true or false. An if statement runs one block when the condition is true and an else block otherwise.",
+        "The expression score >= 60 checks whether the score is at least 60. A score of 85 produces Passed.",
+        "Test values at the boundary too: 59, 60, and 61. One successful example is not enough to check your condition."
+      ],
+      "note": "Use braces around conditional blocks to make later changes less error-prone.",
+      "code": "#include <stdio.h>\n#include <string.h>\n\n\nint main(void) {\n    int score = 85;\n    if (score >= 60) {\n        printf(\"Passed\\n\");\n    } else {\n        printf(\"Try again\\n\");\n    }\n    return 0;\n}\n",
+      "output": "Passed\n",
+      "stdin": "",
+      "exercise": "Set the score to 59. Then try 60 to check the boundary condition.",
+      "quiz": {
+        "question": "If score is 60, is score >= 60 true?",
+        "choices": [
+          "Yes",
+          "No",
+          "Only when score > 60"
+        ],
+        "answer": 0,
+        "explanation": "The >= operator includes equality, so the condition is true for 60."
+      }
+    },
+    {
+      "id": "c-loops",
+      "language": "c",
+      "title": "Loops and sums",
+      "summary": "Make repetitive work simpler",
+      "order": 3,
+      "minutes": 7,
+      "level": "Beginner",
+      "paragraphs": [
+        "A loop repeats an operation. As the counter changes, each iteration works with a new value.",
+        "The variable total starts at 0. Adding 1, 2, 3, 4, and 5 gives a final sum of 15.",
+        "Identify where the loop starts and stops. An incorrect stopping condition can cause extra iterations or an infinite loop."
+      ],
+      "note": "C17 allows you to declare int n inside a for loop.",
+      "code": "#include <stdio.h>\n#include <string.h>\n\n\nint main(void) {\n    int total = 0;\n    for (int n = 1; n <= 5; n++) total += n;\n    printf(\"%d\\n\", total);\n    return 0;\n}\n",
+      "output": "15\n",
+      "stdin": "",
+      "exercise": "Change the upper limit to 10. The sum of the numbers from 1 to 10 should be 55.",
+      "quiz": {
+        "question": "What is 1 + 2 + 3 + 4 + 5?",
+        "choices": [
+          "10",
+          "15",
+          "25"
+        ],
+        "answer": 1,
+        "explanation": "The five numbers add up to 15. The last counter value is not the sum."
+      }
+    },
+    {
+      "id": "c-functions",
+      "language": "c",
+      "title": "Functions",
+      "summary": "Write once, use again",
+      "order": 4,
+      "minutes": 8,
+      "level": "Beginner",
+      "paragraphs": [
+        "A function is a named group of operations. It can accept values through parameters and return a result.",
+        "The square function multiplies n by itself. Calling square(6) returns 36, which is then printed.",
+        "Returning a value and printing it are different operations. A returned value can be used in other calculations."
+      ],
+      "note": "Both the parameter and return value have type int.",
+      "code": "#include <stdio.h>\n#include <string.h>\n\nint square(int n) { return n * n; }\n\nint main(void) {\n    printf(\"%d\\n\", square(6));\n    return 0;\n}\n",
+      "output": "36\n",
+      "stdin": "",
+      "exercise": "Call square(9). Then write a cube function that raises a number to the third power.",
+      "quiz": {
+        "question": "What does square(6) return?",
+        "choices": [
+          "12",
+          "36",
+          "216"
+        ],
+        "answer": 1,
+        "explanation": "Squaring multiplies a number by itself: 6 × 6 = 36."
+      }
+    },
+    {
+      "id": "javascript-variables",
+      "language": "javascript",
+      "title": "Variables and types",
+      "summary": "Give your data a name",
+      "order": 1,
+      "minutes": 5,
+      "level": "Beginner",
+      "paragraphs": [
+        "A variable gives a value a name. You can use that name to work with the value later in your program.",
+        "In this example, name stores text and age stores a whole number. Text is written inside quotation marks; numbers are written without them.",
+        "Open the code and change the name and age. The output shows the name first, then the age on a separate line."
+      ],
+      "note": "A const binding cannot be reassigned; let allows reassignment.",
+      "code": "let age = 19;\nconst name = \"Ali\";\nconsole.log(name);\nconsole.log(age);\n",
+      "output": "Ali\n19\n",
+      "stdin": "",
+      "exercise": "Change the age to 21. Notice the difference between writing a number and writing text.",
+      "quiz": {
+        "question": "Which value is an integer?",
+        "choices": [
+          "\"19\"",
+          "19",
+          "\"Ali\""
+        ],
+        "answer": 1,
+        "explanation": "Without quotation marks, 19 is an integer. \"19\" is a string."
+      }
+    },
+    {
+      "id": "javascript-conditions",
+      "language": "javascript",
+      "title": "Conditions: if / else",
+      "summary": "Teach your program to make choices",
+      "order": 2,
+      "minutes": 6,
+      "level": "Beginner",
+      "paragraphs": [
+        "A condition is an expression that evaluates to true or false. An if statement runs one block when the condition is true and an else block otherwise.",
+        "The expression score >= 60 checks whether the score is at least 60. A score of 85 produces Passed.",
+        "Test values at the boundary too: 59, 60, and 61. One successful example is not enough to check your condition."
+      ],
+      "note": "Use === when you need strict equality comparisons.",
+      "code": "const score = 85;\nif (score >= 60) {\n    console.log(\"Passed\");\n} else {\n    console.log(\"Try again\");\n}\n",
+      "output": "Passed\n",
+      "stdin": "",
+      "exercise": "Set the score to 59. Then try 60 to check the boundary condition.",
+      "quiz": {
+        "question": "If score is 60, is score >= 60 true?",
+        "choices": [
+          "Yes",
+          "No",
+          "Only when score > 60"
+        ],
+        "answer": 0,
+        "explanation": "The >= operator includes equality, so the condition is true for 60."
+      }
+    },
+    {
+      "id": "javascript-loops",
+      "language": "javascript",
+      "title": "Loops and sums",
+      "summary": "Make repetitive work simpler",
+      "order": 3,
+      "minutes": 7,
+      "level": "Beginner",
+      "paragraphs": [
+        "A loop repeats an operation. As the counter changes, each iteration works with a new value.",
+        "The variable total starts at 0. Adding 1, 2, 3, 4, and 5 gives a final sum of 15.",
+        "Identify where the loop starts and stops. An incorrect stopping condition can cause extra iterations or an infinite loop."
+      ],
+      "note": "JavaScript runs in Node.js here. document and alert are browser APIs.",
+      "code": "let total = 0;\nfor (let n = 1; n <= 5; n++) total += n;\nconsole.log(total);\n",
+      "output": "15\n",
+      "stdin": "",
+      "exercise": "Change the upper limit to 10. The sum of the numbers from 1 to 10 should be 55.",
+      "quiz": {
+        "question": "What is 1 + 2 + 3 + 4 + 5?",
+        "choices": [
+          "10",
+          "15",
+          "25"
+        ],
+        "answer": 1,
+        "explanation": "The five numbers add up to 15. The last counter value is not the sum."
+      }
+    },
+    {
+      "id": "javascript-functions",
+      "language": "javascript",
+      "title": "Functions",
+      "summary": "Write once, use again",
+      "order": 4,
+      "minutes": 8,
+      "level": "Beginner",
+      "paragraphs": [
+        "A function is a named group of operations. It can accept values through parameters and return a result.",
+        "The square function multiplies n by itself. Calling square(6) returns 36, which is then printed.",
+        "Returning a value and printing it are different operations. A returned value can be used in other calculations."
+      ],
+      "note": "Without a return statement, a function returns undefined.",
+      "code": "function square(n) {\n    return n * n;\n}\n\nconsole.log(square(6));\n",
+      "output": "36\n",
+      "stdin": "",
+      "exercise": "Call square(9). Then write a cube function that raises a number to the third power.",
+      "quiz": {
+        "question": "What does square(6) return?",
+        "choices": [
+          "12",
+          "36",
+          "216"
+        ],
+        "answer": 1,
+        "explanation": "Squaring multiplies a number by itself: 6 × 6 = 36."
+      }
+    },
+    {
+      "id": "java-variables",
+      "language": "java",
+      "title": "Variables and types",
+      "summary": "Give your data a name",
+      "order": 1,
+      "minutes": 5,
+      "level": "Beginner",
+      "paragraphs": [
+        "A variable gives a value a name. You can use that name to work with the value later in your program.",
+        "In this example, name stores text and age stores a whole number. Text is written inside quotation marks; numbers are written without them.",
+        "Open the code and change the name and age. The output shows the name first, then the age on a separate line."
+      ],
+      "note": "Java declares types explicitly. Use the file Main.java and the public class Main.",
+      "code": "import java.util.*;\n\npublic class Main {\n\n    public static void main(String[] args) {\n        int age = 19;\n        String name = \"Ali\";\n        System.out.println(name);\n        System.out.println(age);\n    }\n}\n",
+      "output": "Ali\n19\n",
+      "stdin": "",
+      "exercise": "Change the age to 21. Notice the difference between writing a number and writing text.",
+      "quiz": {
+        "question": "Which value is an integer?",
+        "choices": [
+          "\"19\"",
+          "19",
+          "\"Ali\""
+        ],
+        "answer": 1,
+        "explanation": "Without quotation marks, 19 is an integer. \"19\" is a string."
+      }
+    },
+    {
+      "id": "java-conditions",
+      "language": "java",
+      "title": "Conditions: if / else",
+      "summary": "Teach your program to make choices",
+      "order": 2,
+      "minutes": 6,
+      "level": "Beginner",
+      "paragraphs": [
+        "A condition is an expression that evaluates to true or false. An if statement runs one block when the condition is true and an else block otherwise.",
+        "The expression score >= 60 checks whether the score is at least 60. A score of 85 produces Passed.",
+        "Test values at the boundary too: 59, 60, and 61. One successful example is not enough to check your condition."
+      ],
+      "note": "Put the condition in parentheses and strings in double quotation marks.",
+      "code": "import java.util.*;\n\npublic class Main {\n\n    public static void main(String[] args) {\n        int score = 85;\n        if (score >= 60) {\n            System.out.println(\"Passed\");\n        } else {\n            System.out.println(\"Try again\");\n        }\n    }\n}\n",
+      "output": "Passed\n",
+      "stdin": "",
+      "exercise": "Set the score to 59. Then try 60 to check the boundary condition.",
+      "quiz": {
+        "question": "If score is 60, is score >= 60 true?",
+        "choices": [
+          "Yes",
+          "No",
+          "Only when score > 60"
+        ],
+        "answer": 0,
+        "explanation": "The >= operator includes equality, so the condition is true for 60."
+      }
+    },
+    {
+      "id": "java-loops",
+      "language": "java",
+      "title": "Loops and sums",
+      "summary": "Make repetitive work simpler",
+      "order": 3,
+      "minutes": 7,
+      "level": "Beginner",
+      "paragraphs": [
+        "A loop repeats an operation. As the counter changes, each iteration works with a new value.",
+        "The variable total starts at 0. Adding 1, 2, 3, 4, and 5 gives a final sum of 15.",
+        "Identify where the loop starts and stops. An incorrect stopping condition can cause extra iterations or an infinite loop."
+      ],
+      "note": "System.out.println adds a new line after the value.",
+      "code": "import java.util.*;\n\npublic class Main {\n\n    public static void main(String[] args) {\n        int total = 0;\n        for (int n = 1; n <= 5; n++) total += n;\n        System.out.println(total);\n    }\n}\n",
+      "output": "15\n",
+      "stdin": "",
+      "exercise": "Change the upper limit to 10. The sum of the numbers from 1 to 10 should be 55.",
+      "quiz": {
+        "question": "What is 1 + 2 + 3 + 4 + 5?",
+        "choices": [
+          "10",
+          "15",
+          "25"
+        ],
+        "answer": 1,
+        "explanation": "The five numbers add up to 15. The last counter value is not the sum."
+      }
+    },
+    {
+      "id": "java-functions",
+      "language": "java",
+      "title": "Functions",
+      "summary": "Write once, use again",
+      "order": 4,
+      "minutes": 8,
+      "level": "Beginner",
+      "paragraphs": [
+        "A function is a named group of operations. It can accept values through parameters and return a result.",
+        "The square function multiplies n by itself. Calling square(6) returns 36, which is then printed.",
+        "Returning a value and printing it are different operations. A returned value can be used in other calculations."
+      ],
+      "note": "The static function can be called from static main without creating an object.",
+      "code": "import java.util.*;\n\npublic class Main {\n    static int square(int n) { return n * n; }\n\n    public static void main(String[] args) {\n        System.out.println(square(6));\n    }\n}\n",
+      "output": "36\n",
+      "stdin": "",
+      "exercise": "Call square(9). Then write a cube function that raises a number to the third power.",
+      "quiz": {
+        "question": "What does square(6) return?",
+        "choices": [
+          "12",
+          "36",
+          "216"
+        ],
+        "answer": 1,
+        "explanation": "Squaring multiplies a number by itself: 6 × 6 = 36."
+      }
+    },
+    {
+      "id": "go-variables",
+      "language": "go",
+      "title": "Variables and types",
+      "summary": "Give your data a name",
+      "order": 1,
+      "minutes": 5,
+      "level": "Beginner",
+      "paragraphs": [
+        "A variable gives a value a name. You can use that name to work with the value later in your program.",
+        "In this example, name stores text and age stores a whole number. Text is written inside quotation marks; numbers are written without them.",
+        "Open the code and change the name and age. The output shows the name first, then the age on a separate line."
+      ],
+      "note": ":= declares a new variable inside a function. Declared local variables must be used.",
+      "code": "package main\n\nimport \"fmt\"\n\n\nfunc main() {\n    age := 19\n    name := \"Ali\"\n    fmt.Println(name)\n    fmt.Println(age)\n}\n",
+      "output": "Ali\n19\n",
+      "stdin": "",
+      "exercise": "Change the age to 21. Notice the difference between writing a number and writing text.",
+      "quiz": {
+        "question": "Which value is an integer?",
+        "choices": [
+          "\"19\"",
+          "19",
+          "\"Ali\""
+        ],
+        "answer": 1,
+        "explanation": "Without quotation marks, 19 is an integer. \"19\" is a string."
+      }
+    },
+    {
+      "id": "go-conditions",
+      "language": "go",
+      "title": "Conditions: if / else",
+      "summary": "Teach your program to make choices",
+      "order": 2,
+      "minutes": 6,
+      "level": "Beginner",
+      "paragraphs": [
+        "A condition is an expression that evaluates to true or false. An if statement runs one block when the condition is true and an else block otherwise.",
+        "The expression score >= 60 checks whether the score is at least 60. A score of 85 produces Passed.",
+        "Test values at the boundary too: 59, 60, and 61. One successful example is not enough to check your condition."
+      ],
+      "note": "Go does not require parentheses around an if condition. Put the opening brace on the same line.",
+      "code": "package main\n\nimport \"fmt\"\n\n\nfunc main() {\n    score := 85\n    if score >= 60 {\n        fmt.Println(\"Passed\")\n    } else {\n        fmt.Println(\"Try again\")\n    }\n}\n",
+      "output": "Passed\n",
+      "stdin": "",
+      "exercise": "Set the score to 59. Then try 60 to check the boundary condition.",
+      "quiz": {
+        "question": "If score is 60, is score >= 60 true?",
+        "choices": [
+          "Yes",
+          "No",
+          "Only when score > 60"
+        ],
+        "answer": 0,
+        "explanation": "The >= operator includes equality, so the condition is true for 60."
+      }
+    },
+    {
+      "id": "go-loops",
+      "language": "go",
+      "title": "Loops and sums",
+      "summary": "Make repetitive work simpler",
+      "order": 3,
+      "minutes": 7,
+      "level": "Beginner",
+      "paragraphs": [
+        "A loop repeats an operation. As the counter changes, each iteration works with a new value.",
+        "The variable total starts at 0. Adding 1, 2, 3, 4, and 5 gives a final sum of 15.",
+        "Identify where the loop starts and stops. An incorrect stopping condition can cause extra iterations or an infinite loop."
+      ],
+      "note": "Go uses for for loops. In this example, n goes from 1 to 5.",
+      "code": "package main\n\nimport \"fmt\"\n\n\nfunc main() {\n    total := 0\n    for n := 1; n <= 5; n++ {\n        total += n\n    }\n    fmt.Println(total)\n}\n",
+      "output": "15\n",
+      "stdin": "",
+      "exercise": "Change the upper limit to 10. The sum of the numbers from 1 to 10 should be 55.",
+      "quiz": {
+        "question": "What is 1 + 2 + 3 + 4 + 5?",
+        "choices": [
+          "10",
+          "15",
+          "25"
+        ],
+        "answer": 1,
+        "explanation": "The five numbers add up to 15. The last counter value is not the sum."
+      }
+    },
+    {
+      "id": "go-functions",
+      "language": "go",
+      "title": "Functions",
+      "summary": "Write once, use again",
+      "order": 4,
+      "minutes": 8,
+      "level": "Beginner",
+      "paragraphs": [
+        "A function is a named group of operations. It can accept values through parameters and return a result.",
+        "The square function multiplies n by itself. Calling square(6) returns 36, which is then printed.",
+        "Returning a value and printing it are different operations. A returned value can be used in other calculations."
+      ],
+      "note": "Go writes a parameter type after its name and the return type after the parameter list.",
+      "code": "package main\n\nimport \"fmt\"\n\nfunc square(n int) int {\n    return n * n\n}\n\nfunc main() {\n    fmt.Println(square(6))\n}\n",
+      "output": "36\n",
+      "stdin": "",
+      "exercise": "Call square(9). Then write a cube function that raises a number to the third power.",
+      "quiz": {
+        "question": "What does square(6) return?",
+        "choices": [
+          "12",
+          "36",
+          "216"
+        ],
+        "answer": 1,
+        "explanation": "Squaring multiplies a number by itself: 6 × 6 = 36."
+      }
+    },
+    {
+      "id": "ruby-variables",
+      "language": "ruby",
+      "title": "Variables and types",
+      "summary": "Give your data a name",
+      "order": 1,
+      "minutes": 5,
+      "level": "Beginner",
+      "paragraphs": [
+        "A variable gives a value a name. You can use that name to work with the value later in your program.",
+        "In this example, name stores text and age stores a whole number. Text is written inside quotation marks; numbers are written without them.",
+        "Open the code and change the name and age. The output shows the name first, then the age on a separate line."
+      ],
+      "note": "Ruby determines types from values. puts adds a new line after each value.",
+      "code": "age = 19\nname = \"Ali\"\nputs name\nputs age\n",
+      "output": "Ali\n19\n",
+      "stdin": "",
+      "exercise": "Change the age to 21. Notice the difference between writing a number and writing text.",
+      "quiz": {
+        "question": "Which value is an integer?",
+        "choices": [
+          "\"19\"",
+          "19",
+          "\"Ali\""
+        ],
+        "answer": 1,
+        "explanation": "Without quotation marks, 19 is an integer. \"19\" is a string."
+      }
+    },
+    {
+      "id": "ruby-conditions",
+      "language": "ruby",
+      "title": "Conditions: if / else",
+      "summary": "Teach your program to make choices",
+      "order": 2,
+      "minutes": 6,
+      "level": "Beginner",
+      "paragraphs": [
+        "A condition is an expression that evaluates to true or false. An if statement runs one block when the condition is true and an else block otherwise.",
+        "The expression score >= 60 checks whether the score is at least 60. A score of 85 produces Passed.",
+        "Test values at the boundary too: 59, 60, and 61. One successful example is not enough to check your condition."
+      ],
+      "note": "Ruby ends an if block with end.",
+      "code": "score = 85\nif score >= 60\n    puts \"Passed\"\nelse\n    puts \"Try again\"\nend\n",
+      "output": "Passed\n",
+      "stdin": "",
+      "exercise": "Set the score to 59. Then try 60 to check the boundary condition.",
+      "quiz": {
+        "question": "If score is 60, is score >= 60 true?",
+        "choices": [
+          "Yes",
+          "No",
+          "Only when score > 60"
+        ],
+        "answer": 0,
+        "explanation": "The >= operator includes equality, so the condition is true for 60."
+      }
+    },
+    {
+      "id": "ruby-loops",
+      "language": "ruby",
+      "title": "Loops and sums",
+      "summary": "Make repetitive work simpler",
+      "order": 3,
+      "minutes": 7,
+      "level": "Beginner",
+      "paragraphs": [
+        "A loop repeats an operation. As the counter changes, each iteration works with a new value.",
+        "The variable total starts at 0. Adding 1, 2, 3, 4, and 5 gives a final sum of 15.",
+        "Identify where the loop starts and stops. An incorrect stopping condition can cause extra iterations or an infinite loop."
+      ],
+      "note": "(1..5) includes 5; (1...5) does not.",
+      "code": "total = 0\n(1..5).each do |n|\n    total += n\nend\nputs total\n",
+      "output": "15\n",
+      "stdin": "",
+      "exercise": "Change the upper limit to 10. The sum of the numbers from 1 to 10 should be 55.",
+      "quiz": {
+        "question": "What is 1 + 2 + 3 + 4 + 5?",
+        "choices": [
+          "10",
+          "15",
+          "25"
+        ],
+        "answer": 1,
+        "explanation": "The five numbers add up to 15. The last counter value is not the sum."
+      }
+    },
+    {
+      "id": "ruby-functions",
+      "language": "ruby",
+      "title": "Functions",
+      "summary": "Write once, use again",
+      "order": 4,
+      "minutes": 8,
+      "level": "Beginner",
+      "paragraphs": [
+        "A function is a named group of operations. It can accept values through parameters and return a result.",
+        "The square function multiplies n by itself. Calling square(6) returns 36, which is then printed.",
+        "Returning a value and printing it are different operations. A returned value can be used in other calculations."
+      ],
+      "note": "Ruby automatically returns the last expression. You can also use return.",
+      "code": "def square(n)\n    n * n\nend\n\nputs square(6)\n",
+      "output": "36\n",
+      "stdin": "",
+      "exercise": "Call square(9). Then write a cube function that raises a number to the third power.",
+      "quiz": {
+        "question": "What does square(6) return?",
+        "choices": [
+          "12",
+          "36",
+          "216"
+        ],
+        "answer": 1,
+        "explanation": "Squaring multiplies a number by itself: 6 × 6 = 36."
+      }
+    },
+    {
+      "id": "sql-tables",
+      "language": "sql",
+      "title": "Tables and data",
+      "summary": "CREATE TABLE and INSERT",
+      "order": 1,
+      "minutes": 6,
+      "level": "Beginner",
+      "paragraphs": [
+        "SQL stores data in tables. Each column defines a type of data, and each row represents a record.",
+        "CREATE TABLE defines a table, INSERT INTO adds rows, and SELECT reads the data."
+      ],
+      "note": "Each run starts with a fresh SQLite database. Create the tables you need in the same source file.",
+      "code": "CREATE TABLE students (name TEXT, score INTEGER);\nINSERT INTO students VALUES ('Ali', 85), ('Lola', 95), ('Vali', 55);\n\nSELECT name, score FROM students ORDER BY name;\n",
+      "output": "name  score\n----  -----\nAli   85\nLola  95\nVali  55\n",
+      "stdin": "",
+      "exercise": "Add another student and inspect the result.",
+      "quiz": {
+        "question": "Which statement adds a row?",
+        "choices": [
+          "SELECT",
+          "INSERT INTO",
+          "ORDER BY"
+        ],
+        "answer": 1,
+        "explanation": "INSERT INTO adds a new row."
+      }
+    },
+    {
+      "id": "sql-filter",
+      "language": "sql",
+      "title": "Sorting and filtering",
+      "summary": "WHERE and ORDER BY",
+      "order": 2,
+      "minutes": 7,
+      "level": "Beginner",
+      "paragraphs": [
+        "WHERE chooses which rows to include. ORDER BY controls the order of the results.",
+        "This example selects students with a score of at least 60 and orders them by score from highest to lowest. DESC means descending; ASC means ascending."
+      ],
+      "note": "Each run starts with a fresh SQLite database. Create the tables you need in the same source file.",
+      "code": "CREATE TABLE students (name TEXT, score INTEGER);\nINSERT INTO students VALUES ('Ali', 85), ('Lola', 95), ('Vali', 55);\n\nSELECT name, score FROM students\nWHERE score >= 60\nORDER BY score DESC;\n",
+      "output": "name  score\n----  -----\nLola  95\nAli   85\n",
+      "stdin": "",
+      "exercise": "Change the threshold to 90. Only one student should remain.",
+      "quiz": {
+        "question": "Which keyword specifies descending order?",
+        "choices": [
+          "ASC",
+          "DESC",
+          "WHERE"
+        ],
+        "answer": 1,
+        "explanation": "DESC orders values from highest to lowest."
+      }
+    },
+    {
+      "id": "sql-aggregate",
+      "language": "sql",
+      "title": "Aggregation and grouping",
+      "summary": "COUNT, AVG, and GROUP BY",
+      "order": 3,
+      "minutes": 8,
+      "level": "Beginner",
+      "paragraphs": [
+        "Aggregate functions calculate one value from several rows. COUNT counts rows and AVG calculates an average.",
+        "GROUP BY puts rows with the same key into groups. Use HAVING to filter the resulting groups."
+      ],
+      "note": "Each run starts with a fresh SQLite database. Create the tables you need in the same source file.",
+      "code": "CREATE TABLE students (name TEXT, score INTEGER);\nINSERT INTO students VALUES ('Ali', 85), ('Lola', 95), ('Vali', 55);\n\nSELECT COUNT(*) AS count, ROUND(AVG(score), 2) AS average FROM students;\n",
+      "output": "count  average\n-----  -------\n3      78.33\n",
+      "stdin": "",
+      "exercise": "Add columns for MAX(score) and MIN(score).",
+      "quiz": {
+        "question": "Which expression counts rows?",
+        "choices": [
+          "AVG(score)",
+          "COUNT(*)",
+          "ORDER BY"
+        ],
+        "answer": 1,
+        "explanation": "COUNT(*) counts all selected rows."
+      }
+    },
+    {
+      "id": "sql-join",
+      "language": "sql",
+      "title": "Joining tables",
+      "summary": "INNER JOIN",
+      "order": 4,
+      "minutes": 9,
+      "level": "Beginner",
+      "paragraphs": [
+        "JOIN combines related data from two tables. ON specifies which column values must match.",
+        "INNER JOIN returns matching rows from both tables. LEFT JOIN also preserves unmatched rows from the left table."
+      ],
+      "note": "Each run starts with a fresh SQLite database. Create the tables you need in the same source file.",
+      "code": "CREATE TABLE groups (id INTEGER, title TEXT);\nCREATE TABLE students (name TEXT, group_id INTEGER);\nINSERT INTO groups VALUES (1, 'CS-101'), (2, 'CS-102');\nINSERT INTO students VALUES ('Ali', 1), ('Lola', 2);\nSELECT s.name, g.title\nFROM students AS s JOIN groups AS g ON s.group_id = g.id\nORDER BY s.name;\n",
+      "output": "name  title\n----  ------\nAli   CS-101\nLola  CS-102\n",
+      "stdin": "",
+      "exercise": "Add a student with a nonexistent group. Compare INNER JOIN with LEFT JOIN.",
+      "quiz": {
+        "question": "Which join preserves unmatched rows from the left table?",
+        "choices": [
+          "INNER JOIN",
+          "LEFT JOIN",
+          "CROSS JOIN"
+        ],
+        "answer": 1,
+        "explanation": "LEFT JOIN preserves every row from the left table."
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "example-python-variables",
+      "language": "python",
+      "title": "Variables and types",
+      "category": "Fundamentals",
+      "summary": "Give your data a name",
+      "code": "age = 19\nname = \"Ali\"\nprint(name)\nprint(age)\n",
+      "stdin": "",
+      "output": "Ali\n19\n"
+    },
+    {
+      "id": "example-python-conditions",
+      "language": "python",
+      "title": "Conditions: if / else",
+      "category": "Fundamentals",
+      "summary": "Teach your program to make choices",
+      "code": "score = 85\nif score >= 60:\n    print(\"Passed\")\nelse:\n    print(\"Try again\")\n",
+      "stdin": "",
+      "output": "Passed\n"
+    },
+    {
+      "id": "example-python-loops",
+      "language": "python",
+      "title": "Loops and sums",
+      "category": "Fundamentals",
+      "summary": "Make repetitive work simpler",
+      "code": "total = 0\nfor n in range(1, 6):\n    total += n\nprint(total)\n",
+      "stdin": "",
+      "output": "15\n"
+    },
+    {
+      "id": "example-python-functions",
+      "language": "python",
+      "title": "Functions",
+      "category": "Fundamentals",
+      "summary": "Write once, use again",
+      "code": "def square(n):\n    return n * n\n\nprint(square(6))\n",
+      "stdin": "",
+      "output": "36\n"
+    },
+    {
+      "id": "example-cpp-variables",
+      "language": "cpp",
+      "title": "Variables and types",
+      "category": "Fundamentals",
+      "summary": "Give your data a name",
+      "code": "#include <iostream>\n#include <vector>\n#include <string>\nusing namespace std;\n\n\nint main() {\n    int age = 19;\n    string name = \"Ali\";\n    cout << name << \"\\n\" << age << \"\\n\";\n    return 0;\n}\n",
+      "stdin": "",
+      "output": "Ali\n19\n"
+    },
+    {
+      "id": "example-cpp-conditions",
+      "language": "cpp",
+      "title": "Conditions: if / else",
+      "category": "Fundamentals",
+      "summary": "Teach your program to make choices",
+      "code": "#include <iostream>\n#include <vector>\n#include <string>\nusing namespace std;\n\n\nint main() {\n    int score = 85;\n    if (score >= 60) {\n        cout << \"Passed\\n\";\n    } else {\n        cout << \"Try again\\n\";\n    }\n    return 0;\n}\n",
+      "stdin": "",
+      "output": "Passed\n"
+    },
+    {
+      "id": "example-cpp-loops",
+      "language": "cpp",
+      "title": "Loops and sums",
+      "category": "Fundamentals",
+      "summary": "Make repetitive work simpler",
+      "code": "#include <iostream>\n#include <vector>\n#include <string>\nusing namespace std;\n\n\nint main() {\n    int total = 0;\n    for (int n = 1; n <= 5; n++) total += n;\n    cout << total << \"\\n\";\n    return 0;\n}\n",
+      "stdin": "",
+      "output": "15\n"
+    },
+    {
+      "id": "example-cpp-functions",
+      "language": "cpp",
+      "title": "Functions",
+      "category": "Fundamentals",
+      "summary": "Write once, use again",
+      "code": "#include <iostream>\n#include <vector>\n#include <string>\nusing namespace std;\n\nint square(int n) { return n * n; }\n\nint main() {\n    cout << square(6) << \"\\n\";\n    return 0;\n}\n",
+      "stdin": "",
+      "output": "36\n"
+    },
+    {
+      "id": "example-c-variables",
+      "language": "c",
+      "title": "Variables and types",
+      "category": "Fundamentals",
+      "summary": "Give your data a name",
+      "code": "#include <stdio.h>\n#include <string.h>\n\n\nint main(void) {\n    int age = 19;\n    char name[] = \"Ali\";\n    printf(\"%s\\n%d\\n\", name, age);\n    return 0;\n}\n",
+      "stdin": "",
+      "output": "Ali\n19\n"
+    },
+    {
+      "id": "example-c-conditions",
+      "language": "c",
+      "title": "Conditions: if / else",
+      "category": "Fundamentals",
+      "summary": "Teach your program to make choices",
+      "code": "#include <stdio.h>\n#include <string.h>\n\n\nint main(void) {\n    int score = 85;\n    if (score >= 60) {\n        printf(\"Passed\\n\");\n    } else {\n        printf(\"Try again\\n\");\n    }\n    return 0;\n}\n",
+      "stdin": "",
+      "output": "Passed\n"
+    },
+    {
+      "id": "example-c-loops",
+      "language": "c",
+      "title": "Loops and sums",
+      "category": "Fundamentals",
+      "summary": "Make repetitive work simpler",
+      "code": "#include <stdio.h>\n#include <string.h>\n\n\nint main(void) {\n    int total = 0;\n    for (int n = 1; n <= 5; n++) total += n;\n    printf(\"%d\\n\", total);\n    return 0;\n}\n",
+      "stdin": "",
+      "output": "15\n"
+    },
+    {
+      "id": "example-c-functions",
+      "language": "c",
+      "title": "Functions",
+      "category": "Fundamentals",
+      "summary": "Write once, use again",
+      "code": "#include <stdio.h>\n#include <string.h>\n\nint square(int n) { return n * n; }\n\nint main(void) {\n    printf(\"%d\\n\", square(6));\n    return 0;\n}\n",
+      "stdin": "",
+      "output": "36\n"
+    },
+    {
+      "id": "example-javascript-variables",
+      "language": "javascript",
+      "title": "Variables and types",
+      "category": "Fundamentals",
+      "summary": "Give your data a name",
+      "code": "let age = 19;\nconst name = \"Ali\";\nconsole.log(name);\nconsole.log(age);\n",
+      "stdin": "",
+      "output": "Ali\n19\n"
+    },
+    {
+      "id": "example-javascript-conditions",
+      "language": "javascript",
+      "title": "Conditions: if / else",
+      "category": "Fundamentals",
+      "summary": "Teach your program to make choices",
+      "code": "const score = 85;\nif (score >= 60) {\n    console.log(\"Passed\");\n} else {\n    console.log(\"Try again\");\n}\n",
+      "stdin": "",
+      "output": "Passed\n"
+    },
+    {
+      "id": "example-javascript-loops",
+      "language": "javascript",
+      "title": "Loops and sums",
+      "category": "Fundamentals",
+      "summary": "Make repetitive work simpler",
+      "code": "let total = 0;\nfor (let n = 1; n <= 5; n++) total += n;\nconsole.log(total);\n",
+      "stdin": "",
+      "output": "15\n"
+    },
+    {
+      "id": "example-javascript-functions",
+      "language": "javascript",
+      "title": "Functions",
+      "category": "Fundamentals",
+      "summary": "Write once, use again",
+      "code": "function square(n) {\n    return n * n;\n}\n\nconsole.log(square(6));\n",
+      "stdin": "",
+      "output": "36\n"
+    },
+    {
+      "id": "example-java-variables",
+      "language": "java",
+      "title": "Variables and types",
+      "category": "Fundamentals",
+      "summary": "Give your data a name",
+      "code": "import java.util.*;\n\npublic class Main {\n\n    public static void main(String[] args) {\n        int age = 19;\n        String name = \"Ali\";\n        System.out.println(name);\n        System.out.println(age);\n    }\n}\n",
+      "stdin": "",
+      "output": "Ali\n19\n"
+    },
+    {
+      "id": "example-java-conditions",
+      "language": "java",
+      "title": "Conditions: if / else",
+      "category": "Fundamentals",
+      "summary": "Teach your program to make choices",
+      "code": "import java.util.*;\n\npublic class Main {\n\n    public static void main(String[] args) {\n        int score = 85;\n        if (score >= 60) {\n            System.out.println(\"Passed\");\n        } else {\n            System.out.println(\"Try again\");\n        }\n    }\n}\n",
+      "stdin": "",
+      "output": "Passed\n"
+    },
+    {
+      "id": "example-java-loops",
+      "language": "java",
+      "title": "Loops and sums",
+      "category": "Fundamentals",
+      "summary": "Make repetitive work simpler",
+      "code": "import java.util.*;\n\npublic class Main {\n\n    public static void main(String[] args) {\n        int total = 0;\n        for (int n = 1; n <= 5; n++) total += n;\n        System.out.println(total);\n    }\n}\n",
+      "stdin": "",
+      "output": "15\n"
+    },
+    {
+      "id": "example-java-functions",
+      "language": "java",
+      "title": "Functions",
+      "category": "Fundamentals",
+      "summary": "Write once, use again",
+      "code": "import java.util.*;\n\npublic class Main {\n    static int square(int n) { return n * n; }\n\n    public static void main(String[] args) {\n        System.out.println(square(6));\n    }\n}\n",
+      "stdin": "",
+      "output": "36\n"
+    },
+    {
+      "id": "example-go-variables",
+      "language": "go",
+      "title": "Variables and types",
+      "category": "Fundamentals",
+      "summary": "Give your data a name",
+      "code": "package main\n\nimport \"fmt\"\n\n\nfunc main() {\n    age := 19\n    name := \"Ali\"\n    fmt.Println(name)\n    fmt.Println(age)\n}\n",
+      "stdin": "",
+      "output": "Ali\n19\n"
+    },
+    {
+      "id": "example-go-conditions",
+      "language": "go",
+      "title": "Conditions: if / else",
+      "category": "Fundamentals",
+      "summary": "Teach your program to make choices",
+      "code": "package main\n\nimport \"fmt\"\n\n\nfunc main() {\n    score := 85\n    if score >= 60 {\n        fmt.Println(\"Passed\")\n    } else {\n        fmt.Println(\"Try again\")\n    }\n}\n",
+      "stdin": "",
+      "output": "Passed\n"
+    },
+    {
+      "id": "example-go-loops",
+      "language": "go",
+      "title": "Loops and sums",
+      "category": "Fundamentals",
+      "summary": "Make repetitive work simpler",
+      "code": "package main\n\nimport \"fmt\"\n\n\nfunc main() {\n    total := 0\n    for n := 1; n <= 5; n++ {\n        total += n\n    }\n    fmt.Println(total)\n}\n",
+      "stdin": "",
+      "output": "15\n"
+    },
+    {
+      "id": "example-go-functions",
+      "language": "go",
+      "title": "Functions",
+      "category": "Fundamentals",
+      "summary": "Write once, use again",
+      "code": "package main\n\nimport \"fmt\"\n\nfunc square(n int) int {\n    return n * n\n}\n\nfunc main() {\n    fmt.Println(square(6))\n}\n",
+      "stdin": "",
+      "output": "36\n"
+    },
+    {
+      "id": "example-ruby-variables",
+      "language": "ruby",
+      "title": "Variables and types",
+      "category": "Fundamentals",
+      "summary": "Give your data a name",
+      "code": "age = 19\nname = \"Ali\"\nputs name\nputs age\n",
+      "stdin": "",
+      "output": "Ali\n19\n"
+    },
+    {
+      "id": "example-ruby-conditions",
+      "language": "ruby",
+      "title": "Conditions: if / else",
+      "category": "Fundamentals",
+      "summary": "Teach your program to make choices",
+      "code": "score = 85\nif score >= 60\n    puts \"Passed\"\nelse\n    puts \"Try again\"\nend\n",
+      "stdin": "",
+      "output": "Passed\n"
+    },
+    {
+      "id": "example-ruby-loops",
+      "language": "ruby",
+      "title": "Loops and sums",
+      "category": "Fundamentals",
+      "summary": "Make repetitive work simpler",
+      "code": "total = 0\n(1..5).each do |n|\n    total += n\nend\nputs total\n",
+      "stdin": "",
+      "output": "15\n"
+    },
+    {
+      "id": "example-ruby-functions",
+      "language": "ruby",
+      "title": "Functions",
+      "category": "Fundamentals",
+      "summary": "Write once, use again",
+      "code": "def square(n)\n    n * n\nend\n\nputs square(6)\n",
+      "stdin": "",
+      "output": "36\n"
+    },
+    {
+      "id": "example-sql-tables",
+      "language": "sql",
+      "title": "Tables and data",
+      "category": "Databases",
+      "summary": "CREATE TABLE and INSERT",
+      "code": "CREATE TABLE students (name TEXT, score INTEGER);\nINSERT INTO students VALUES ('Ali', 85), ('Lola', 95), ('Vali', 55);\n\nSELECT name, score FROM students ORDER BY name;\n",
+      "stdin": "",
+      "output": "name  score\n----  -----\nAli   85\nLola  95\nVali  55\n"
+    },
+    {
+      "id": "example-sql-filter",
+      "language": "sql",
+      "title": "Sorting and filtering",
+      "category": "Databases",
+      "summary": "WHERE and ORDER BY",
+      "code": "CREATE TABLE students (name TEXT, score INTEGER);\nINSERT INTO students VALUES ('Ali', 85), ('Lola', 95), ('Vali', 55);\n\nSELECT name, score FROM students\nWHERE score >= 60\nORDER BY score DESC;\n",
+      "stdin": "",
+      "output": "name  score\n----  -----\nLola  95\nAli   85\n"
+    },
+    {
+      "id": "example-sql-aggregate",
+      "language": "sql",
+      "title": "Aggregation and grouping",
+      "category": "Databases",
+      "summary": "COUNT, AVG, and GROUP BY",
+      "code": "CREATE TABLE students (name TEXT, score INTEGER);\nINSERT INTO students VALUES ('Ali', 85), ('Lola', 95), ('Vali', 55);\n\nSELECT COUNT(*) AS count, ROUND(AVG(score), 2) AS average FROM students;\n",
+      "stdin": "",
+      "output": "count  average\n-----  -------\n3      78.33\n"
+    },
+    {
+      "id": "example-sql-join",
+      "language": "sql",
+      "title": "Joining tables",
+      "category": "Databases",
+      "summary": "INNER JOIN",
+      "code": "CREATE TABLE groups (id INTEGER, title TEXT);\nCREATE TABLE students (name TEXT, group_id INTEGER);\nINSERT INTO groups VALUES (1, 'CS-101'), (2, 'CS-102');\nINSERT INTO students VALUES ('Ali', 1), ('Lola', 2);\nSELECT s.name, g.title\nFROM students AS s JOIN groups AS g ON s.group_id = g.id\nORDER BY s.name;\n",
+      "stdin": "",
+      "output": "name  title\n----  ------\nAli   CS-101\nLola  CS-102\n"
+    },
+    {
+      "id": "example-python-double",
+      "language": "python",
+      "title": "Double a number",
+      "category": "Input / output",
+      "summary": "Read a number from standard input and calculate its double.",
+      "code": "n = int(input())\nprint(n * 2)\n",
+      "stdin": "21\n",
+      "output": "42\n"
+    },
+    {
+      "id": "example-cpp-double",
+      "language": "cpp",
+      "title": "Double a number",
+      "category": "Input / output",
+      "summary": "Read a number from standard input and calculate its double.",
+      "code": "#include <iostream>\n#include <vector>\n#include <string>\nusing namespace std;\n\n\nint main() {\n    int n;\n    cin >> n;\n    cout << n * 2 << \"\\n\";\n    return 0;\n}\n",
+      "stdin": "21\n",
+      "output": "42\n"
+    },
+    {
+      "id": "example-c-double",
+      "language": "c",
+      "title": "Double a number",
+      "category": "Input / output",
+      "summary": "Read a number from standard input and calculate its double.",
+      "code": "#include <stdio.h>\n#include <string.h>\n\n\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) == 1) printf(\"%d\\n\", n * 2);\n    return 0;\n}\n",
+      "stdin": "21\n",
+      "output": "42\n"
+    },
+    {
+      "id": "example-javascript-double",
+      "language": "javascript",
+      "title": "Double a number",
+      "category": "Input / output",
+      "summary": "Read a number from standard input and calculate its double.",
+      "code": "const fs = require(\"node:fs\");\nconst n = Number(fs.readFileSync(0, \"utf8\").trim());\nconsole.log(n * 2);\n",
+      "stdin": "21\n",
+      "output": "42\n"
+    },
+    {
+      "id": "example-java-double",
+      "language": "java",
+      "title": "Double a number",
+      "category": "Input / output",
+      "summary": "Read a number from standard input and calculate its double.",
+      "code": "import java.util.*;\n\npublic class Main {\n\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        int n = scanner.nextInt();\n        System.out.println(n * 2);\n    }\n}\n",
+      "stdin": "21\n",
+      "output": "42\n"
+    },
+    {
+      "id": "example-go-double",
+      "language": "go",
+      "title": "Double a number",
+      "category": "Input / output",
+      "summary": "Read a number from standard input and calculate its double.",
+      "code": "package main\n\nimport \"fmt\"\n\n\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n    fmt.Println(n * 2)\n}\n",
+      "stdin": "21\n",
+      "output": "42\n"
+    },
+    {
+      "id": "example-ruby-double",
+      "language": "ruby",
+      "title": "Double a number",
+      "category": "Input / output",
+      "summary": "Read a number from standard input and calculate its double.",
+      "code": "n = gets.to_i\nputs n * 2\n",
+      "stdin": "21\n",
+      "output": "42\n"
+    },
+    {
+      "id": "example-sql-double",
+      "language": "sql",
+      "title": "Double a number",
+      "category": "Databases",
+      "summary": "Calculate a number using a SQL expression.",
+      "code": "SELECT 21 * 2 AS doubled;\n",
+      "stdin": "",
+      "output": "doubled\n-------\n42\n"
+    }
+  ],
+  "references": [
+    {
+      "id": "python-ref-0",
+      "language": "python",
+      "title": "print()",
+      "syntax": "print(value)",
+      "summary": "Prints a value to the console.",
+      "example": "print(\"Hello\")",
+      "note": "Adds a new line by default. Use the end parameter to change it."
+    },
+    {
+      "id": "python-ref-1",
+      "language": "python",
+      "title": "len()",
+      "syntax": "len(collection)",
+      "summary": "Returns the length of a string or collection.",
+      "example": "len([10, 20, 30])  # 3",
+      "note": "Indexes start at 0. The last index is one less than the length."
+    },
+    {
+      "id": "python-ref-2",
+      "language": "python",
+      "title": "range()",
+      "syntax": "range(start, stop, step)",
+      "summary": "Represents a sequence of integers.",
+      "example": "list(range(1, 6))  # [1, 2, 3, 4, 5]",
+      "note": "The stop value is excluded. The step cannot be 0."
+    },
+    {
+      "id": "python-ref-3",
+      "language": "python",
+      "title": "list.append()",
+      "syntax": "items.append(value)",
+      "summary": "Adds an element to the end of a list.",
+      "example": "items = [1, 2]\nitems.append(3)",
+      "note": "Modifies the existing list; it does not return a new list."
+    },
+    {
+      "id": "cpp-ref-0",
+      "language": "cpp",
+      "title": "cout",
+      "syntax": "cout << value;",
+      "summary": "Writes a value to standard output.",
+      "example": "cout << \"Hello\" << \"\\n\";",
+      "note": "Requires <iostream>. Use std::cout or a using declaration."
+    },
+    {
+      "id": "cpp-ref-1",
+      "language": "cpp",
+      "title": "cin",
+      "syntax": "cin >> variable;",
+      "summary": "Reads a formatted value from standard input.",
+      "example": "int age;\ncin >> age;",
+      "note": "Reads whitespace-separated values. Use getline to read a whole line."
+    },
+    {
+      "id": "cpp-ref-2",
+      "language": "cpp",
+      "title": "vector.push_back()",
+      "syntax": "items.push_back(value);",
+      "summary": "Adds an element to the end of a vector.",
+      "example": "vector<int> items = {1, 2};\nitems.push_back(3);",
+      "note": "Requires <vector>. Appending has amortized O(1) time complexity."
+    },
+    {
+      "id": "cpp-ref-3",
+      "language": "cpp",
+      "title": "string.size()",
+      "syntax": "text.size()",
+      "summary": "Returns the size of a string.",
+      "example": "string text = \"Hello\";\ncout << text.size();",
+      "note": "For UTF-8 strings, the byte count is not always the number of characters."
+    },
+    {
+      "id": "c-ref-0",
+      "language": "c",
+      "title": "printf()",
+      "syntax": "printf(format, values);",
+      "summary": "Prints values using a format string.",
+      "example": "printf(\"%d\\n\", 42);",
+      "note": "Use %d for int and %s for a null-terminated string. Requires <stdio.h>."
+    },
+    {
+      "id": "c-ref-1",
+      "language": "c",
+      "title": "scanf()",
+      "syntax": "scanf(format, addresses);",
+      "summary": "Reads values from standard input.",
+      "example": "int n;\nif (scanf(\"%d\", &n) == 1) printf(\"%d\", n);",
+      "note": "Check the return value. When reading strings, limit the field width to fit the buffer."
+    },
+    {
+      "id": "c-ref-2",
+      "language": "c",
+      "title": "strlen()",
+      "syntax": "strlen(text)",
+      "summary": "Returns the length of a null-terminated string.",
+      "example": "size_t n = strlen(\"Hello\");",
+      "note": "Requires <string.h>. The terminating null byte is not counted."
+    },
+    {
+      "id": "c-ref-3",
+      "language": "c",
+      "title": "sizeof",
+      "syntax": "sizeof(value_or_type)",
+      "summary": "Gives the size of an object or type in bytes.",
+      "example": "size_t count = sizeof(int);",
+      "note": "This is an operator, not a function. sizeof(pointer) does not give the length of an array."
+    },
+    {
+      "id": "javascript-ref-0",
+      "language": "javascript",
+      "title": "console.log()",
+      "syntax": "console.log(value);",
+      "summary": "Prints a value to the console.",
+      "example": "console.log(\"Hello\");",
+      "note": "JavaScript runs in a Node.js environment in this compiler."
+    },
+    {
+      "id": "javascript-ref-1",
+      "language": "javascript",
+      "title": "Array.map()",
+      "syntax": "items.map(callback)",
+      "summary": "Creates a new array by transforming each element.",
+      "example": "[1, 2, 3].map(n => n * 2);",
+      "note": "The result is [2, 4, 6]. This example does not modify the original array."
+    },
+    {
+      "id": "javascript-ref-2",
+      "language": "javascript",
+      "title": "Array.filter()",
+      "syntax": "items.filter(predicate)",
+      "summary": "Creates a new array containing elements that pass a test.",
+      "example": "[1, 2, 3, 4].filter(n => n % 2 === 0);",
+      "note": "The result is [2, 4]. An element is kept when the callback returns a truthy value."
+    },
+    {
+      "id": "javascript-ref-3",
+      "language": "javascript",
+      "title": "JSON.parse()",
+      "syntax": "JSON.parse(text)",
+      "summary": "Converts JSON text into a JavaScript value.",
+      "example": "JSON.parse('{\"score\":85}');",
+      "note": "Invalid JSON throws a SyntaxError. Use try/catch when appropriate."
+    },
+    {
+      "id": "java-ref-0",
+      "language": "java",
+      "title": "println()",
+      "syntax": "System.out.println(value);",
+      "summary": "Prints a value followed by a new line.",
+      "example": "System.out.println(\"Hello\");",
+      "note": "print does not add a new line; println does."
+    },
+    {
+      "id": "java-ref-1",
+      "language": "java",
+      "title": "Scanner.nextInt()",
+      "syntax": "scanner.nextInt()",
+      "summary": "Reads the next integer.",
+      "example": "Scanner scanner = new Scanner(System.in);\nint n = scanner.nextInt();",
+      "note": "Requires import java.util.Scanner. Invalid input may throw an exception."
+    },
+    {
+      "id": "java-ref-2",
+      "language": "java",
+      "title": "String.length()",
+      "syntax": "text.length()",
+      "summary": "Returns the string length in UTF-16 code units.",
+      "example": "\"Hello\".length();  // 5",
+      "note": "This is not always the number of visible Unicode characters."
+    },
+    {
+      "id": "java-ref-3",
+      "language": "java",
+      "title": "ArrayList.add()",
+      "syntax": "items.add(value);",
+      "summary": "Adds an element to a dynamic list.",
+      "example": "ArrayList<Integer> items = new ArrayList<>();\nitems.add(42);",
+      "note": "Requires import java.util.ArrayList. Use Integer rather than int for the type parameter."
+    },
+    {
+      "id": "go-ref-0",
+      "language": "go",
+      "title": "fmt.Println()",
+      "syntax": "fmt.Println(values...)",
+      "summary": "Prints values followed by a new line.",
+      "example": "fmt.Println(\"Hello\", 42)",
+      "note": "Requires import \"fmt\". Inserts spaces between values."
+    },
+    {
+      "id": "go-ref-1",
+      "language": "go",
+      "title": "fmt.Scan()",
+      "syntax": "fmt.Scan(&variable)",
+      "summary": "Reads a value from standard input.",
+      "example": "var n int\nfmt.Scan(&n)",
+      "note": "Returns the number of items read and an error. Check the error in real applications."
+    },
+    {
+      "id": "go-ref-2",
+      "language": "go",
+      "title": "append()",
+      "syntax": "append(slice, value)",
+      "summary": "Appends an element and returns the updated slice.",
+      "example": "items := []int{1, 2}\nitems = append(items, 3)",
+      "note": "Save the returned slice; its backing array may have been reallocated."
+    },
+    {
+      "id": "go-ref-3",
+      "language": "go",
+      "title": "len()",
+      "syntax": "len(value)",
+      "summary": "Returns the length of a slice, map, array, or string.",
+      "example": "fmt.Println(len([]int{1, 2, 3}))",
+      "note": "For strings, len counts bytes, not Unicode characters."
+    },
+    {
+      "id": "ruby-ref-0",
+      "language": "ruby",
+      "title": "puts",
+      "syntax": "puts value",
+      "summary": "Prints a value followed by a new line.",
+      "example": "puts \"Hello\"",
+      "note": "print usually does not add a new line."
+    },
+    {
+      "id": "ruby-ref-1",
+      "language": "ruby",
+      "title": "gets",
+      "syntax": "gets",
+      "summary": "Reads one line from standard input.",
+      "example": "name = gets&.chomp",
+      "note": "May return nil at the end of input. chomp removes the trailing record separator."
+    },
+    {
+      "id": "ruby-ref-2",
+      "language": "ruby",
+      "title": "Array#map",
+      "syntax": "items.map { |x| expression }",
+      "summary": "Creates a new array from the results of a block.",
+      "example": "[1, 2, 3].map { |n| n * 2 }",
+      "note": "The result is [2, 4, 6]. map! changes the original array instead."
+    },
+    {
+      "id": "ruby-ref-3",
+      "language": "ruby",
+      "title": "Array#select",
+      "syntax": "items.select { |x| condition }",
+      "summary": "Selects elements that satisfy a condition.",
+      "example": "[1, 2, 3, 4].select { |n| n.even? }",
+      "note": "The result is [2, 4]."
+    },
+    {
+      "id": "sql-ref-0",
+      "language": "sql",
+      "title": "SELECT",
+      "syntax": "SELECT columns FROM table_name;",
+      "summary": "Reads columns from a table.",
+      "example": "SELECT name, score FROM students;",
+      "note": "Do not rely on row order without ORDER BY."
+    },
+    {
+      "id": "sql-ref-1",
+      "language": "sql",
+      "title": "WHERE",
+      "syntax": "WHERE condition",
+      "summary": "Filters rows using a condition.",
+      "example": "SELECT name FROM students WHERE score >= 60;",
+      "note": "Check for NULL with IS NULL, not = NULL."
+    },
+    {
+      "id": "sql-ref-2",
+      "language": "sql",
+      "title": "GROUP BY",
+      "syntax": "GROUP BY column",
+      "summary": "Groups rows for aggregate calculations.",
+      "example": "SELECT group_id, COUNT(*) FROM students GROUP BY group_id;",
+      "note": "WHERE filters rows; HAVING filters the calculated groups."
+    },
+    {
+      "id": "sql-ref-3",
+      "language": "sql",
+      "title": "JOIN",
+      "syntax": "JOIN other_table ON condition",
+      "summary": "Combines related tables.",
+      "example": "SELECT s.name, g.title FROM students s JOIN groups g ON s.group_id = g.id;",
+      "note": "Multiple matches can increase the number of rows in the result."
+    }
+  ],
+  "algorithms": [
+    {
+      "id": "linear-search",
+      "title": "Linear search",
+      "summary": "Check elements one by one from start to finish.",
+      "complexity": "O(n)",
+      "space": "O(1)",
+      "steps": [
+        "Start at index 0.",
+        "Compare each element with the target.",
+        "Return the index when a match is found; otherwise continue.",
+        "Return -1 if you reach the end without a match."
+      ],
+      "code": "def find(items, target):\n    for i, value in enumerate(items):\n        if value == target:\n            return i\n    return -1\n\nprint(find([8, 3, 5, 1], 5))\n",
+      "output": "2\n",
+      "language": "python",
+      "stdin": "",
+      "note": "The array does not need to be sorted. If values repeat, this implementation returns the first matching index.",
+      "category": "Search"
+    },
+    {
+      "id": "binary-search",
+      "title": "Binary search",
+      "summary": "Halve the search interval in a sorted array.",
+      "complexity": "O(log n)",
+      "space": "O(1)",
+      "steps": [
+        "The array must be sorted in ascending order.",
+        "Calculate the middle index from the left and right boundaries.",
+        "If the middle value is smaller, move the left boundary up; if larger, move the right boundary down.",
+        "Return the index when found, or -1 when the interval is empty."
+      ],
+      "code": "def binary_search(items, target):\n    left, right = 0, len(items) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if items[mid] == target:\n            return mid\n        if items[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1\n\nprint(binary_search([1, 3, 5, 7, 9], 7))\n",
+      "output": "3\n",
+      "language": "python",
+      "stdin": "",
+      "note": "This algorithm does not guarantee a correct answer on an unsorted array. Indexes start at 0.",
+      "category": "Search"
+    },
+    {
+      "id": "bubble-sort",
+      "title": "Bubble sort",
+      "summary": "Compare neighboring elements and move larger values to the right.",
+      "complexity": "O(n²), best case O(n)",
+      "space": "O(1)",
+      "steps": [
+        "Compare two neighboring elements.",
+        "Swap them if the left value is larger.",
+        "After one pass, the largest remaining value reaches the end.",
+        "Stop early when a pass makes no swaps."
+      ],
+      "code": "items = [5, 2, 4, 1]\nfor end in range(len(items) - 1, 0, -1):\n    changed = False\n    for i in range(end):\n        if items[i] > items[i + 1]:\n            items[i], items[i + 1] = items[i + 1], items[i]\n            changed = True\n    if not changed:\n        break\nprint(items)\n",
+      "output": "[1, 2, 4, 5]\n",
+      "language": "python",
+      "stdin": "",
+      "note": "Useful for learning. For large datasets, usually prefer the sorting tools provided by the language.",
+      "category": "Sorting"
+    },
+    {
+      "id": "stack",
+      "title": "Stack — LIFO",
+      "summary": "The last element added is the first one removed.",
+      "complexity": "Push/pop at the end: amortized O(1)",
+      "space": "O(n) for n elements",
+      "steps": [
+        "Create an empty stack.",
+        "Push an element onto the end.",
+        "Pop the last element.",
+        "Check that the stack is not empty before removing an element."
+      ],
+      "code": "stack = []\nstack.append(\"A\")\nstack.append(\"B\")\nprint(stack.pop())\nprint(stack.pop())\n",
+      "output": "B\nA\n",
+      "language": "python",
+      "stdin": "",
+      "note": "Popping from the end of a Python list works well for stacks. Calling pop() on an empty list raises IndexError.",
+      "category": "Data structures"
+    },
+    {
+      "id": "queue",
+      "title": "Queue — FIFO",
+      "summary": "The first element added is the first one removed.",
+      "complexity": "deque.append / popleft: O(1)",
+      "space": "O(n) for n elements",
+      "steps": [
+        "Create an empty queue.",
+        "Add an element at the end.",
+        "Remove an element from the front.",
+        "Use deque for efficient removal from the front."
+      ],
+      "code": "from collections import deque\n\nqueue = deque([\"Ali\", \"Lola\"])\nqueue.append(\"Vali\")\nprint(queue.popleft())\nprint(queue.popleft())\n",
+      "output": "Ali\nLola\n",
+      "language": "python",
+      "stdin": "",
+      "note": "list.pop(0) takes O(n) time; deque.popleft() is better suited to a queue.",
+      "category": "Data structures"
+    },
+    {
+      "id": "hash-map",
+      "title": "Dictionary — hash map",
+      "summary": "Look up values by key and count repeated items.",
+      "complexity": "Lookup/insertion: average O(1), worst case O(n)",
+      "space": "O(n)",
+      "steps": [
+        "Use each value as a key.",
+        "Start the count at 0 if the key is missing.",
+        "Increase the count at each occurrence.",
+        "Read the result using the key."
+      ],
+      "code": "counts = {}\nfor word in [\"apple\", \"pomegranate\", \"apple\"]:\n    counts[word] = counts.get(word, 0) + 1\nprint(counts[\"apple\"])\n",
+      "output": "2\n",
+      "language": "python",
+      "stdin": "",
+      "note": "Python dictionary keys must be hashable. A list, for example, cannot be used as a key.",
+      "category": "Data structures"
+    },
+    {
+      "id": "linked-list",
+      "title": "Linked list",
+      "summary": "Each node stores a value and a reference to the next node.",
+      "complexity": "Insert at head: O(1), search: O(n)",
+      "space": "O(n)",
+      "steps": [
+        "Store value and next fields in a Node class.",
+        "Keep a head reference to the first node.",
+        "Follow next to move to the next node.",
+        "Stop when you reach None."
+      ],
+      "code": "class Node:\n    def __init__(self, value, next_node=None):\n        self.value = value\n        self.next = next_node\n\nhead = Node(10, Node(20, Node(30)))\ncurrent = head\nwhile current is not None:\n    print(current.value)\n    current = current.next\n",
+      "output": "10\n20\n30\n",
+      "language": "python",
+      "stdin": "",
+      "note": "There is no direct indexed access: you must walk through the list to reach the desired node.",
+      "category": "Data structures"
+    },
+    {
+      "id": "bfs",
+      "title": "Breadth-first search (BFS)",
+      "summary": "Visit a graph layer by layer from a starting node.",
+      "complexity": "O(V + E)",
+      "space": "O(V)",
+      "steps": [
+        "Add the starting node to the queue and the visited set.",
+        "Remove the node at the front of the queue.",
+        "Mark unvisited neighbors and add them to the queue.",
+        "Continue until the queue is empty."
+      ],
+      "code": "from collections import deque\n\ngraph = {\"A\": [\"B\", \"C\"], \"B\": [\"D\"], \"C\": [], \"D\": []}\nqueue = deque([\"A\"])\nvisited = {\"A\"}\norder = []\nwhile queue:\n    node = queue.popleft()\n    order.append(node)\n    for neighbor in graph[node]:\n        if neighbor not in visited:\n            visited.add(neighbor)\n            queue.append(neighbor)\nprint(\" \".join(order))\n",
+      "output": "A B C D\n",
+      "language": "python",
+      "stdin": "",
+      "note": "V is the number of vertices and E is the number of edges. This implementation visits only the part reachable from the starting node.",
+      "category": "Graphs"
+    }
+  ]
+}

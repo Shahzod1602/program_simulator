@@ -1,0 +1,8 @@
+# Replace the example domain before deployment. No deployment is performed automatically.
+lab.example.edu {
+    encode zstd gzip
+    request_body {
+        max_size 100KB
+    }
+    reverse_proxy 127.0.0.1:8010
+}

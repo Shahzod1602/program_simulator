@@ -1,0 +1,22 @@
+[Unit]
+Description=Campus Code private gVisor worker
+After=network.target docker.service
+Requires=docker.service
+
+[Service]
+User=campus-runner
+Group=campus-runner
+SupplementaryGroups=docker
+WorkingDirectory=/opt/campus-code
+EnvironmentFile=/etc/campus-code/runner.env
+UMask=0077
+# One process owns the global four-slot worker semaphore.
+ExecStart=/opt/campus-code/.venv/bin/gunicorn --no-control-socket --bind 127.0.0.1:8011 --workers 1 --threads 4 --timeout 65 --access-logfile - sandbox_runner:create_runner()
+Restart=on-failure
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

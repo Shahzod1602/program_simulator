@@ -1,0 +1,15 @@
+[Unit]
+Description=Expire Campus Code guest data and sessions
+
+[Service]
+Type=oneshot
+User=campus-web
+Group=campus-web
+WorkingDirectory=/opt/campus-code
+Environment=DATABASE=/var/lib/campus-code/campus.sqlite3
+ExecStart=/opt/campus-code/.venv/bin/python manage.py cleanup
+UMask=0077
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/campus-code

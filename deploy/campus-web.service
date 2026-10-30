@@ -1,0 +1,25 @@
+[Unit]
+Description=Campus Code web application
+After=network.target
+
+[Service]
+User=campus-web
+Group=campus-web
+WorkingDirectory=/opt/campus-code
+EnvironmentFile=/etc/campus-code/web.env
+Environment=DATABASE=/var/lib/campus-code/campus.sqlite3
+StateDirectory=campus-code
+StateDirectoryMode=0700
+UMask=0077
+ExecStart=/opt/campus-code/.venv/bin/gunicorn --no-control-socket --bind 127.0.0.1:8010 --workers 2 --threads 4 --timeout 70 --access-logfile - server:create_app()
+Restart=on-failure
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/campus-code
+MemoryMax=512M
+# This user MUST NOT belong to the docker group or have access to the Docker socket.
+
+[Install]
+WantedBy=multi-user.target
