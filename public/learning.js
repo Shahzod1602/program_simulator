@@ -65,7 +65,7 @@
   renderQuiz(article,item);
   const complete=button(completed(item.id)?'✓ Marked as read':'Mark as read',async()=>{
    complete.disabled=true;
-   try { await window.authReady; const value=!completed(item.id); await window.api(`/api/progress/${item.id}`,{method:'PUT',body:{completed:value}});progress[item.id]=value;render(); }
+   try { await window.workspaceReady; const value=!completed(item.id); await window.api(`/api/progress/${item.id}`,{method:'PUT',body:{completed:value}});progress[item.id]=value;render(); }
    catch(error) { complete.disabled=false; const message=node('p','learn-error',error.message); complete.after(message); }
   },'learn-button '+(completed(item.id)?'complete':'primary'));
   const footer=node('div','lesson-next');footer.append(complete);const course=data.lessons.filter(l=>l.language===item.language);const index=course.findIndex(l=>l.id===item.id);if(course[index+1]) footer.append(link('Next lesson →',`lessons/${course[index+1].id}`));article.append(footer,node('p','learn-muted','Reading marks help you track your own learning. They are not assessed grades or certificates.'));
@@ -96,7 +96,7 @@
   function paint(){const frame=frames[index];values.replaceChildren();frame.values.forEach((value,i)=>{const cell=node('div','trace-cell'+(frame.active.includes(i)?' highlighted':''));cell.append(node('small','',i),node('strong','',value));values.append(cell);});note.textContent=frame.note;count.textContent=`${index+1} / ${frames.length}`;back.disabled=index===0;next.disabled=index===frames.length-1;}paint();
  }
  window.addEventListener('hashchange',()=>{render(); window.scrollTo({top:0,behavior:'instant'});});
- window.authReady.then(async()=>{try{progress=(await window.api('/api/progress')).progress;render();}catch{render();view.prepend(node('p','learn-error','Could not load your reading progress. Reload the page and try again.'));}});
+ window.workspaceReady.then(async()=>{try{progress=(await window.api('/api/progress')).progress;render();}catch{render();view.prepend(node('p','learn-error','Could not load your reading progress. Reload the page and try again.'));}});
  fetch('/learning-data.json').then(response=>{if(!response.ok)throw Error();return response.json();}).then(content=>{data=content;render();}).catch(()=>{setSection('lessons');view.replaceChildren(node('p','learn-error','Could not load the learning materials. Please reload the page.'));});
  render();
 })();

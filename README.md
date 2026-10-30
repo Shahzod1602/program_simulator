@@ -1,8 +1,8 @@
 # Campus Code
 
-A university programming lab for Python, C++, C, JavaScript, Java, Go, Ruby and SQLite SQL. Everyone can open a temporary guest workspace without email or login. Optional username/password accounts retain drafts across devices. Creating an account upgrades the current guest workspace, preserving its saved code.
+A university programming lab for Python, C++, C, JavaScript, Java, Go, Ruby and SQLite SQL. Everyone opens a temporary workspace without email or login. The interface has no account, sign-in or registration section. Drafts and reading progress are tied to the current browser session; download code to keep a copy.
 
-**Current status:** the preview is deployed at https://167.233.140.202 with HTTPS and a gVisor worker. All 36 tests, including real execution and isolation checks, passed on the Linux server. The live HTTPS API was also checked for all eight languages, guest/account flows, saved drafts, reading progress and network denial. The local Mac still has no local worker, so running only the local web server returns an unavailable-runner error. This remains a small preview deployment, not a capacity-tested campus service.
+**Current status:** the preview is deployed at https://autplatform.uz with HTTPS and a gVisor worker. All 36 tests, including real execution and isolation checks, passed on the Linux server. The live HTTPS API was also checked for all eight languages, guest/account flows, saved drafts, reading progress and network denial. The local Mac still has no local worker, so running only the local web server returns an unavailable-runner error. This remains a small preview deployment, not a capacity-tested campus service.
 
 ## English learning centre
 
@@ -13,7 +13,7 @@ The main navigation opens `#lessons`, `#examples`, `#reference`, and `#algorithm
 - 32 reference entries covering functions, methods and operators, with syntax, short examples and caveats.
 - Eight DSA topics: linear/binary search, bubble sort, stack, queue, hash map, linked list and BFS. DSA examples use Python; binary search and bubble sort also have deterministic step controls.
 
-Expected outputs are authored examples, not execution results. The algorithm step views illustrate fixed examples and do not interpret student code. Reading marks are self-tracked learning progress, not assessed grades. Progress is owned by the current guest/account in SQLite, migrates when a guest creates an account, and is removed during guest cleanup. Quizzes give local practice feedback and do not require the execution worker.
+Expected outputs are authored examples, not execution results. The algorithm step views illustrate fixed examples and do not interpret student code. Reading marks are self-tracked learning progress, not assessed grades. Progress is owned by the current workspace in SQLite and is removed during guest cleanup. Quizzes give local practice feedback and do not require the execution worker.
 
 Curriculum source: `scripts/build_curriculum.py`. Regenerate with `python3 scripts/build_curriculum.py`; the browser reads `public/learning-data.json`. The server validates progress IDs against this same file. After changing curriculum IDs, restart the web server. This is a starter set of original English material, not a complete accredited course or copied Programiz course content.
 

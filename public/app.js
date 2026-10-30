@@ -166,11 +166,11 @@ let language = 'python', running = false, toastTimer, saveTimer;
 const pendingSaves = new Map();
 let saveChain = Promise.resolve();
 const drafts = {};
-const savedLabel = () => window.campusAccount.user?.role === 'guest' ? 'Guest draft saved' : 'Saved to your account';
+const savedLabel = () => 'Workspace draft saved';
 function read(key, fallback) { try { return localStorage.getItem(key) ?? fallback; } catch { return fallback; } }
 function store(key, value) { try { localStorage.setItem(key, value); } catch { /* Preferences remain in memory if browser storage is blocked. */ } }
 function save() {
- if (!window.campusAccount.user) return;
+ if (!window.campusWorkspace.user) return;
  drafts[language] = {code: $('editor').value, stdin: $('stdin').value};
  pendingSaves.set(language, {...drafts[language]});
  $('saved').textContent = 'Unsaved changes'; clearTimeout(saveTimer);
@@ -216,7 +216,7 @@ function changeLanguage(next) {
 }
 async function run() {
  if (running) return;
- if (!window.campusAccount.user) return;
+ if (!window.campusWorkspace.user) return;
  running = true; save(); tab('output');
  $('run').disabled = true; $('run').innerHTML = '<span>◌</span> Running…';
  document.querySelectorAll('[data-language]').forEach(b => b.disabled = true);
@@ -273,10 +273,10 @@ $('closeExamples').onclick = () => $('exampleDialog').close();
 $('exampleDialog').addEventListener('click', e => { if (e.target === $('exampleDialog')) { const rect = e.target.getBoundingClientRect(); if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) e.target.close(); } });
 document.body.classList.toggle('dark', read('campus-theme', 'light') === 'dark');
 $('theme').onclick = () => { document.body.classList.toggle('dark'); store('campus-theme', document.body.classList.contains('dark') ? 'dark' : 'light'); };
-window.authReady.then(account => {
- Object.assign(drafts, account.drafts);
+window.workspaceReady.then(state => {
+ Object.assign(drafts, state.drafts);
  const previousLanguage = read('campus-language', 'python');
- // Avoid saving the empty editor over a loaded account draft on first render.
+ // Avoid saving the empty editor over a loaded workspace draft on first render.
  language = Object.hasOwn(languages, previousLanguage) ? previousLanguage : 'python';
  const initialDraft = drafts[language];
  delete drafts[language];
@@ -287,7 +287,7 @@ window.authReady.then(account => {
 // Public bridge for the learning library; all student code still uses /api/run.
 window.campusEditor = {
  async openExample(item) {
-  await window.authReady;
+  await window.workspaceReady;
   if (running) { toast('Wait for the program to finish.'); return false; }
   if (!Object.hasOwn(languages, item.language)) return false;
   if (drafts[language]) save();
