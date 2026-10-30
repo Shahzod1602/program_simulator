@@ -38,13 +38,8 @@ def healthy():
         time.sleep(1)
     return False
 
-def main():
-    lock = open('/run/lock/campus-deploy.lock', 'w')
-    fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    archive = sys.stdin.buffer.read(20 * 1024 * 1024 + 1)
-    if len(archive) > 20 * 1024 * 1024:
-        raise ValueError('Release exceeds 20 MiB')
-    release = RELEASES / hashlib.sha256(archive).hexdigest()[:16] + '-' + str(time.time_ns())
+def unpack_release(archive):
+    release = RELEASES / (hashlib.sha256(archive).hexdigest()[:16] + '-' + str(time.time_ns()))
     RELEASES.mkdir(mode=0o755, exist_ok=True)
     # A fresh directory, regular files only, no symbolic links or traversal.
     release.mkdir(mode=0o755)
@@ -80,6 +75,15 @@ def main():
     except Exception:
         shutil.rmtree(release)
         raise
+    return release
+
+def main():
+    lock = open('/run/lock/campus-deploy.lock', 'w')
+    fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    archive = sys.stdin.buffer.read(20 * 1024 * 1024 + 1)
+    if len(archive) > 20 * 1024 * 1024:
+        raise ValueError('Release exceeds 20 MiB')
+    release = unpack_release(archive)
     # Back up the live database consistently; no source-supplied commands.
     backup_dir = Path('/var/backups/campus-code')
     backup_dir.mkdir(mode=0o700, exist_ok=True)
